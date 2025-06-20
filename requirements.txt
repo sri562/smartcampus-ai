@@ -1,0 +1,12 @@
+@echo off
+cd /d "C:\Users\032223943\Desktop\smartcampus-ai"
+
+echo Starting FastAPI backend...
+start cmd /k ".\venv\Scripts\activate && uvicorn app.main:app --reload"
+
+timeout /t 3 >nul
+
+echo Starting Streamlit dashboard...
+start cmd /k ".\venv\Scripts\activate && streamlit run dashboard.py"
+
+echo All systems launched 🚀
